@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>plugin</title>
+    <style>
+        body {
+          font-family: 'Arial', sans-serif;
+          background-color: #f0f0f0;
+          margin: 0;
+          padding: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+        }
+
+        #container {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #output {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #e0e0e0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .list {
+            text-align: left;
+        }
+
+        h2 {
+            margin-bottom: 10px;
+        }
+
+        .description {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .description li {
+            margin-bottom: 8px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #00ccff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0048ff;
+        }
+    </style>
+</head>
+<body>
+
+<div id="container">
+    <h1>Accessibility Testing</h1>
+
+    <div id="output"></div>
+
+    <div class="list">
+        <h2>Features</h2>
+        <ul class="description">
+            <li><strong>Feature 1 ➤</strong> Text Readability: Analyze text layers for readability metrics, such as font size, line height, and letter spacing.</li>
+            <li><strong>Feature 2 ➤</strong> Color Contrast: check the color contrast ratios between text and background colors. Will probably use color contrast library like axe-core to implement this one.</li>
+            <li><strong>Feature 3 ➤</strong> Heading hierarchy: Check if the design has order of hierarchy for headings.</li>
+            <li><strong>Feature 4 ➤</strong> Link Accessibility: check links have discernible text and provide additional context for screen reader users.</li>
+        </ul>
+    </div>
+    <div>
+      <button id="analyzeButton">Analyze!</button>
+    </div>
+</div>
+
+<script>
+  document.getElementById("analyzeButton").onclick = () => {
+    parent.postMessage({pluginMessage:"hi"});
+  }
+</script>
+
+</body>
+</html>
